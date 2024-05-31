@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/files/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        {%include 'navbar.html'%}
+        <section class="row">
+            <center>
+                <div class="col-md-4 p-3">
+                    <div class="card shadow p-4">
+                        <h4 class="text-info">Login Form</h4>
+                        <span class="text-danger">{{error}}</span>
+                        <span class="text-info">{{message}}</span>
+                        <form action="/login" method="post">
+                            <input type="text" name="username" id="" placeholder="Username" class="form-control" required> <br>
+                            <input type="password" name="password" id="" placeholder="Password" class="form-control" required><br>
+                            <input type="submit" value="Login" class="btn btn-primary"><br><br>
+                            <a href="/register">Dont have Account, Register Here</a>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </center>
+        </section>
+    </div>    
+</body>
+</html>

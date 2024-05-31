@@ -1,0 +1,29 @@
+<section class="row">
+    <div class="col-md-12">
+       <nav class="navbar navbar-expand-md navbar-light btn-light p-3">
+               <a href="#" class="navbar-brand">Soko <b class="text-success">Garden</b></a>
+               <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                   <span class="navbar-toggler-icon"></span>
+              </button>
+
+               <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                         <a href="/" class="nav-item nav-link">Home</a>
+                         <a href="/" class="nav-item nav-link">Blog</a>
+                         <a href="/" class="nav-item nav-link">About US</a>
+                    </div>
+                   <div class="navbar-nav ms-auto">
+                    <!--    TODO Logout-->
+                        {% if session['key']%}
+                        <span class="text-info btn-lg">Welcome: {{session['key']}}</span>
+                        <a href="/logout" class="btn btn-warning">Logout</a>
+                        {% else %}
+                            <a href="/login" class="nav-item nav-link  btn btn-primary text-light me-3">Log In </a>
+                            <a href="/register" class="nav-item nav-link btn btn-primary text-light me-3">Register</a>
+                        {% endif %}
+                   </div>
+
+               </div>
+       </nav>
+    </div>
+</section>

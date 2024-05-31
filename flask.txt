@@ -1,0 +1,30 @@
+xamp in linx
+.deb
+chmod +x .deb
+sudo./deb
+to confirm sudo/opt/lampp/lampp start
+start aparche
+start mySQL
+ browser
+localhost-phpmyadmin
+first
+RDBMS
+-access
+-mysql
+-oracle
+-ms sql server
+-postgres
+-sqlite
+creating database 
+
+flask
+one- structure
+template- store html files
+static- resources/assets ie css,js,images
+app.py-run the logic
+two- routing
+app.py
+
+
+app.run(debug=True)
+jinja template used to include in html

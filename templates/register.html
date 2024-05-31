@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../static/files/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        {% include 'navbar.html'%}
+        
+        <section class="row mt-2">
+            <center>
+                <div class="col-md-5">
+                    <div class="card shadow p-1 ps-4 pe-4">
+                        <p class="text-danger text-center">{{error}}</p>
+                        <h5 class="text-light bg-primary p-1 text-center">{{messager}}</h5>
+                        <h5 class="text-success text-center">{{message}}</h5>
+                        <form action="/register" method="post">
+                            <input type="text" name="username" id="" placeholder="Enter User Name" class="form-control mt-3" required><br>
+                            <input type="email" name="email" id="" placeholder="Enter Email" class="form-control" required><br>
+                            <input type="tel" name="phone" id="" placeholder="Enter Phone number +2547.." class="form-control" required><br>
+                            <input type="password" name="password1" id="" placeholder="Enter Password" class="form-control" required><br>
+                            <input type="password" name="password2" id="" placeholder="Confirm Password" class="form-control" required><br>
+                            <input type="submit" value="Register" class="btn btn-primary form-control" ><br>
+                            <a href="/login">You have an Account? Login</a>
+                        </form>
+                    </div>
+                </div>
+            </center>
+        </section>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!--  CSS Supporting FIles  -->
+    <link href="../static/files/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/files/css/lightslider.css">
+    <link rel="stylesheet" href="../static/files/css/style.css">
+    <!--  JS  Supporting FIles    -->
+    <script src="../static/files/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/files/js/jquery.js"></script>
+    <script src="../static/files/js/lightslider.js"></script>
+    <script src="../static/files/js/script.js"></script>
+</head>
+<body>
+    <div class="container_fluid">
+        {% include 'navbar.html' %}
+        <hr>
+        {% include 'carousel.html' %}
+        <hr>
+        <section class="slider p-4">
+            <ul class="cs-hidden autoWidth">
+                <!-- Looping bed items -->
+                {% for record in Others %}
+                <li>
+                    <div class="box">
+                        <div class="slide-img">
+                            <img src="../static/images/{{record[5]}}" width="50" height="50">
+                            <div class="overlay">
+                                <!-- This is a Link to Buy Now, The route on href will be used Later in Next Steps -->
+                                <a href="/single/{{record[0]}}" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+                        <div class="detail-box">
+                            <!-- product name and cost -->
+                            {{record[1]}}
+                            <b class="text-warning">{{record[3]}}</b>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="slider p-4">
+            <ul class="cs-hidden autoWidth">
+                <!-- Looping bed items -->
+                {% for record in Clothes %}
+                <li>
+                    <div class="box">
+                        <div class="slide-img">
+                            <img src="../static/images/{{record[5]}}" width="50" height="50">
+                            <div class="overlay">
+                                <!-- This is a Link to Buy Now, The route on href will be used Later in Next Steps -->
+                                <a href="/single/{{record[0]}}" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+                        <div class="detail-box">
+                            <!-- product name and cost -->
+                            {{record[1]}}
+                            <b class="text-warning">{{record[3]}}</b>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="slider p-4">
+            <ul class="cs-hidden autoWidth">
+                <!-- Looping bed items -->
+                {% for record in Smartphones %}
+                <li>
+                    <div class="box">
+                        <div class="slide-img">
+                            <img src="../static/images/{{record[5]}}" width="50" height="50">
+                            <div class="overlay">
+                                <!-- This is a Link to Buy Now, The route on href will be used Later in Next Steps -->
+                                <a href="" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+                        <div class="detail-box">
+                            <!-- product name and cost -->
+                            {{record[1]}}
+                            <b class="text-warning">{{record[3]}}</b>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="slider p-4">
+            <ul class="cs-hidden autoWidth">
+                <!-- Looping bed items -->
+                {% for record in Electronics %}
+                <li>
+                    <div class="box">
+                        <div class="slide-img">
+                            <img src="../static/images/{{record[5]}}" width="50" height="50">
+                            <div class="overlay">
+                                <!-- This is a Link to Buy Now, The route on href will be used Later in Next Steps -->
+                                <a href="" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+                        <div class="detail-box">
+                            <!-- product name and cost -->
+                            {{record[1]}}
+                            <b class="text-warning">{{record[3]}}</b>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+
+
+    </div>
+    
+    
+</body>
+</html>

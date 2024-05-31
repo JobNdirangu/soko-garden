@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Upload</title>
+    <!--  CSS Supporting FIles  -->
+    <link href="../static/files/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/files/css/lightslider.css">
+    <link rel="stylesheet" href="../static/files/css/style.css">
+    <!--  JS  Supporting FIles    -->
+    <script src="../static/files/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/files/js/jquery.js"></script>
+    <script src="../static/files/js/lightslider.js"></script>
+    <script src="../static/files/js/script.js"></script>
+
+</head>
+<body>
+    <div class="container_fluid">
+        {% include 'navbar.html' %}
+        
+        <section class="row p-2">
+            <div class="col-md-4 text-center">
+                <div class="card shadow p-2 cs-hidden">
+                    <div>
+                        <img src="../static/images/{{product[5]}}" class="img-thumbnail shadow p-2" alt="" >
+                    </div>
+                    <div class="card-body">
+                        <h4 class="text-info">{{product[1]}}</h4>
+                    </div>              
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h3 class="text-muted">Product Description</h3>
+                <p class="text-muted">{{product[2]}}</p>
+                <h4 class="text-primary">KES: {{product[3]}}</h4>
+                <b class="text-danger">Category: {{product[4]}}</b>
+            </div>
+            <div class="col-md-3 me-2">
+                <!-- Check if user is Logged in-->	  
+                {% if session['key'] %}
+                <!-- Create a Form that has an action to mpesa route, We will create this route Next-->		  
+                <div class="card p-3">
+                    <form action="/mpesa" method="post">
+                        <h4 class="text-info">Payment Form</h4>      
+                    <!-- Create a Phone Number Input - User will Enter the Phone number to send STK Push to;  -->
+                    <input type="number" name="phone" placeholder="Enter Phone  2547XXXXXX"
+                     class="form-control"><br>   
+                    <label for="">To Pay KES</label>
+                    <!-- Here, we bind current product_cost in the Cost Input, meaning users will not type the amount,
+                    its automatically put/binded, its readonly you can't change it-->
+                    <input type="number" name="amount" value="{{ product[3]}}"
+                     class="form-control" readonly><br>
+          
+                    <input type="submit" value="Pay Now"
+                       class="btn btn-dark">
+                    </form>
+                </div>
+                <!-- If not Logged in, user MUST Login below to see above Form-->	  
+                {% else %}
+                <h4>Please Sign in to make Payment!</h4>
+                <a href="/login" class="btn btn-dark btn-sm">Login in Account</a>
+                {% endif %}
+            </div>
+            
+        </section>   
+
+        <section class="row">
+            
+          </section>
+
+    </div>
+    
+</body>
+</html>
